@@ -14,6 +14,8 @@ public class EmployeeSimpleResponse {
     private String email;
     private String position;
 
+    // ⭐ Company 필드 없음! (순환 방지)
+
     public static EmployeeSimpleResponse from(Employee employee) {
         return new EmployeeSimpleResponse(
                 employee.getId(),

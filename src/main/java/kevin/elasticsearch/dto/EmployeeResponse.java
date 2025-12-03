@@ -15,8 +15,7 @@ public class EmployeeResponse {
     private String name;
     private String email;
     private String position;
-    private Long companyId;
-    private String companyName;
+    private CompanySimpleResponse company;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -26,8 +25,7 @@ public class EmployeeResponse {
                 employee.getName(),
                 employee.getEmail(),
                 employee.getPosition(),
-                employee.getCompany() != null ? employee.getCompany().getId() : null,
-                employee.getCompany() != null ? employee.getCompany().getName() : null,
+                employee.getCompany() != null ? CompanySimpleResponse.from(employee.getCompany()) : null,
                 employee.getCreatedAt(),
                 employee.getUpdatedAt()
         );
